@@ -21,7 +21,7 @@ class TodoApp:
         return self.taskList
 
     def numberOfTasks(self):
-        pass
+        return len(self.taskList)
 
     def getTaskById(self, taskId):
         # un for para navegar las tareas en la lista
@@ -49,4 +49,8 @@ class TodoApp:
         return False
 
     def deleteTaskById(self, taskId):
-        pass
+        for task in self.taskList:
+            if task["id"] == taskId:
+                self.taskList.remove(task)
+                return True
+        return False

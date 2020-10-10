@@ -22,6 +22,7 @@ todoAppObj = TodoApp()
 
 
 def showAllTasks():
+    print(f"tareas: {todoAppObj.numberOfTasks()} \n")
     taskList = todoAppObj.getAllTasks()
     print("\n")
     if len(taskList) > 0:
@@ -63,7 +64,10 @@ def markTaskAsDone():
 
 
 def deleteTask():
-    pass
+    print("** eliminar tarea por su id ** \n")
+    taskId = int(input("taskId: "))
+    updateSuccess = todoAppObj.deleteTaskById(taskId)
+    print(f"task updated: {updateSuccess}")
 
 
 while True:
@@ -87,3 +91,5 @@ while True:
         modifyTask()
     elif option == 4:
         markTaskAsDone()
+    elif option == 5:
+        deleteTask()
