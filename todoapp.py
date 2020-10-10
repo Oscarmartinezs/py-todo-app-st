@@ -42,7 +42,11 @@ class TodoApp:
         return False
 
     def updateTaskAsDone(self, taskId):
-        pass
+        for task in self.taskList:
+            if task["id"] == taskId:
+                task["done"] = True
+                return True
+        return False
 
     def deleteTaskById(self, taskId):
         pass

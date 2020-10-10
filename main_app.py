@@ -56,7 +56,10 @@ def modifyTask():
 
 
 def markTaskAsDone():
-    pass
+    print("** marcar la tarea como termianda ** \n")
+    taskId = int(input("taskId: "))
+    updateSuccess = todoAppObj.updateTaskAsDone(taskId)
+    print(f"task updated: {updateSuccess}")
 
 
 def deleteTask():
@@ -82,3 +85,5 @@ while True:
         createNewTask()
     elif option == 3:
         modifyTask()
+    elif option == 4:
+        markTaskAsDone()
