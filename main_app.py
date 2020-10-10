@@ -40,7 +40,19 @@ def createNewTask():
 
 
 def modifyTask():
-    pass
+    print("** modificar la tarea ** \n")
+    # solicitar al usuario el id de la tarea a modificar
+    taskId = int(input("taskId: "))
+    # cuando lo tenemos necesitamos la tarea (diccionario)
+    currentTask = todoAppObj.getTaskById(taskId)
+    # le vamos a imprimir el antiguo titulo
+    print(f"old title: {currentTask['title']}")
+    # con un input recibimos el nuevo titulo
+    newTitle = input("new title: ")
+    # enviamos la nueva informacion a ser modificada a la clase
+    updateSuccess = todoAppObj.updateTask(taskId, newTitle)
+    # regresamos si lo logramos
+    print(f"task updated: {updateSuccess}\n")
 
 
 def markTaskAsDone():
@@ -68,3 +80,5 @@ while True:
         showAllTasks()
     elif option == 2:
         createNewTask()
+    elif option == 3:
+        modifyTask()

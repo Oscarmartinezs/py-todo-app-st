@@ -24,10 +24,22 @@ class TodoApp:
         pass
 
     def getTaskById(self, taskId):
-        pass
+        # un for para navegar las tareas en la lista
+        for task in self.taskList:
+            # si el taskid es el del diccionario
+            if task["id"] == taskId:
+                # retornamos el diccionario
+                return task
 
     def updateTask(self, taskId, newTitle):
-        pass
+        # un for para navegar las tareas en la lista
+        for task in self.taskList:
+            # si el taskid es el del diccionario
+            if task["id"] == taskId:
+                # la actualizacion con el nuevo titulo
+                task["title"] = newTitle
+                return True
+        return False
 
     def updateTaskAsDone(self, taskId):
         pass
