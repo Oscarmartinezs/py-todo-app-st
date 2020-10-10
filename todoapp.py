@@ -1,12 +1,24 @@
+# la logica
 class TodoApp:
+    # es el que se ocupa para inicializar la clase
+    # y crear las variables o usar los metodos que
+    # dejaran la clase lista para
     def __init__(self):
-        pass
+        self.taskList = []
+        self.idCounter = 0
 
     def addNewTask(self, taskTitle):
-        pass
+        # aumentar el contador en 1
+        self.idCounter += 1
+        # obtner ese numero
+        taskId = self.idCounter
+        # luego vamos a crear el diccionario
+        taskDict = {"id": taskId, "title": taskTitle, "done": False}
+        # luego lo agregamos a la lista de tareas
+        self.taskList.append(taskDict)
 
     def getAllTasks(self):
-        pass
+        return self.taskList
 
     def numberOfTasks(self):
         pass
